@@ -267,7 +267,7 @@ h2 span {
 .box-base {
   position: absolute;
   inset: 38px 0 0;
-  overflow: hidden;
+  overflow: visible;
   border: 3px solid #d94717;
   border-radius: 10px 10px 24px 24px;
   background: var(--orange);
@@ -335,7 +335,7 @@ h2 span {
 }
 .box-nuggets {
   position: absolute;
-  bottom: -16px;
+  top: -30px;
   right: 15px;
   width: 145px;
   height: 93px;
@@ -344,11 +344,8 @@ h2 span {
   position: absolute;
   width: 42px;
   height: 30px;
-  border-radius: 45% 55% 45% 55%;
-  background: #f5a629;
-  box-shadow:
-    inset -4px -5px 0 #d87618,
-    2px 3px 0 rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.15));
   transform: rotate(20deg);
 }
 .n1 {

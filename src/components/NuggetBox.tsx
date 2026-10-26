@@ -34,12 +34,42 @@ export function NuggetBox({ isOpen, onToggle }: NuggetBoxProps) {
         </div>
         <div className="box-checker" />
         <div className="box-nuggets" aria-hidden="true">
-          <i className="nugget n1" />
-          <i className="nugget n2" />
-          <i className="nugget n3" />
-          <i className="nugget n4" />
-          <i className="nugget n5" />
-          <i className="nugget n6" />
+          <img
+            className="nugget n1"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
+          <img
+            className="nugget n2"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
+          <img
+            className="nugget n3"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
+          <img
+            className="nugget n4"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
+          <img
+            className="nugget n5"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
+          <img
+            className="nugget n6"
+            src="/nugget.png"
+            alt=""
+            draggable={false}
+          />
         </div>
       </div>
       <div className="box-callout">
