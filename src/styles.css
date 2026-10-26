@@ -640,7 +640,8 @@ h2 span {
     padding: 19px 5vw;
   }
   .header-status {
-    display: none;
+    font-size: 8px;
+    letter-spacing: 0.06em;
   }
   .hero {
     display: block;
