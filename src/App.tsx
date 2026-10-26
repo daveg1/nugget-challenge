@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Hero } from "./components/Hero";
 import { Leaderboard } from "./components/Leaderboard";
 import { SiteHeader } from "./components/SiteHeader";
-import { contestants } from "./config";
+import { contestants } from "./leaderboard";
 import "./styles.css";
 
 function App() {

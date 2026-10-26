@@ -10,12 +10,6 @@ export type Contestant = {
   failed?: boolean;
 };
 
-export type NuggetPosition = {
-  x: number;
-  y: number;
-  tilt: number;
-};
-
 export type NuggetStyle = CSSProperties & {
   "--x": string;
   "--y": string;
