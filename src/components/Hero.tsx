@@ -19,19 +19,21 @@ export function Hero({ isBoxOpen, boxHint, onToggleBox }: HeroProps) {
           <br />
           IS ON.
         </h1>
-        <p className="hero-intro">
-          One hundred nuggets. One table. Zero dignity.
-          <br />
-          Watch the brave, the bold, and the defeated.
-        </p>
-        <div className="hero-meta">
-          <div>
-            <span className="meta-label">CHALLENGE</span>
-            <strong>100 NUGGETS</strong>
-          </div>
-          <div>
-            <span className="meta-label">SEASON</span>
-            <strong>10 / 2026</strong>
+        <div className="hero-supporting">
+          <p className="hero-intro">
+            One hundred nuggets. One table. Zero dignity.
+            <br />
+            Watch the brave, the bold, and the defeated.
+          </p>
+          <div className="hero-meta">
+            <div>
+              <span className="meta-label">CHALLENGE</span>
+              <strong>100 NUGGETS</strong>
+            </div>
+            <div>
+              <span className="meta-label">SEASON</span>
+              <strong>10 / 2026</strong>
+            </div>
           </div>
         </div>
       </div>

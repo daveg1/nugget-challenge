@@ -166,9 +166,13 @@ h2 span {
   color: var(--orange);
 }
 .hero-intro {
+  margin: 0;
   color: #bfb4a3;
   font-size: 15px;
   line-height: 1.65;
+}
+.hero-supporting {
+  display: block;
 }
 .hero-meta {
   display: flex;
@@ -196,6 +200,8 @@ h2 span {
   min-height: 490px;
   display: grid;
   place-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 .sunburst {
   position: absolute;
@@ -654,7 +660,7 @@ h2 span {
   }
   .hero-art {
     min-height: 440px;
-    margin-top: -5px;
+    margin-top: 20px;
   }
   .sunburst {
     width: 330px;
@@ -666,9 +672,16 @@ h2 span {
   .hero-intro {
     font-size: 13px;
   }
+  .hero-supporting {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 16px;
+  }
   .hero-meta {
-    gap: 27px;
-    margin-top: 30px;
+    flex-flow: row wrap;
+    gap: 16px;
+    margin-top: 0;
   }
   .hero-meta strong {
     font-size: 14px;
