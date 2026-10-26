@@ -205,6 +205,25 @@ h2 span {
     rgba(246, 200, 68, 0.15) 0deg 5deg,
     transparent 5deg 15deg
   );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    #000 0%,
+    rgba(0, 0, 0, 0.9) 50%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    circle,
+    #000 0%,
+    rgba(0, 0, 0, 0.9) 50%,
+    transparent 78%
+  );
+  animation: sunburst-spin 48s linear infinite;
+}
+
+@keyframes sunburst-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .nugget-box {
   position: relative;
