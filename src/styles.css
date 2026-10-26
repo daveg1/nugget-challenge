@@ -765,6 +765,10 @@ h2 span {
       font-size: 8px;
     }
 
+    & .score .time-taken {
+      font-size: 13px;
+    }
+
     & .pile {
       height: 78px;
     }
