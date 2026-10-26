@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Contestant, NuggetStyle } from "./types";
 
 type NuggetPileProps = {
@@ -29,8 +28,14 @@ export function NuggetPile({ contestant }: NuggetPileProps) {
 
   return (
     <div className="stack-area">
-      <img className="plate" src="/plate.png" alt="" aria-hidden="true" />
-      <div className="bones">
+      <img
+        className="plate"
+        src="/plate.png"
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+      />
+      <div className="pile">
         {Array.from({ length: nuggetCount }, (_, index) => {
           const position = nuggetLayout[index % nuggetLayout.length];
           const style: NuggetStyle = {
@@ -47,14 +52,11 @@ export function NuggetPile({ contestant }: NuggetPileProps) {
               src="/nugget.png"
               alt=""
               style={style}
+              draggable={false}
             />
           );
         })}
       </div>
     </div>
   );
-}
-
-export function scoreStyle(score: number): CSSProperties {
-  return { "--score": score } as CSSProperties;
 }

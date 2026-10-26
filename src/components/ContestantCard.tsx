@@ -1,4 +1,4 @@
-import { NuggetPile, scoreStyle } from "./NuggetPile";
+import { NuggetPile } from "./NuggetPile";
 import type { Contestant } from "./types";
 
 type ContestantCardProps = {
@@ -21,7 +21,6 @@ export function ContestantCard({ contestant, placement }: ContestantCardProps) {
   return (
     <article
       className={`contestant${contestant.failed ? " failed" : ""}`}
-      style={scoreStyle(contestant.score)}
       aria-label={`${contestant.name}, ${contestant.score} nuggets`}
     >
       <div className="person">

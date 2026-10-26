@@ -547,23 +547,15 @@ h2 span {
     transform: translateX(-50%);
     filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.24));
     pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
-  & .stack-area::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 28px;
-    bottom: 11px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  & .bones {
+  & .pile {
     position: relative;
     z-index: 1;
     flex: 0 0 116px;
-    height: calc(var(--score) * 1.02px);
-    max-height: 107px;
+    height: 107px;
     width: 116px;
     overflow: visible;
   }
@@ -579,6 +571,8 @@ h2 span {
   filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.42));
   transform: rotate(var(--tilt));
   animation: wobble 3s ease-in-out infinite alternate;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 @keyframes wobble {
   to {
@@ -604,16 +598,16 @@ h2 span {
   font-size: 13px;
   letter-spacing: 0.04em;
 }
-.failed .bones {
+.failed .pile {
   display: grid;
   place-items: center;
   height: 100%;
   max-height: none;
 }
-.failed .bones .stack-nugget {
+.failed .pile .stack-nugget {
   display: none;
 }
-.failed .bones::after {
+.failed .pile::after {
   content: "☠";
   color: var(--orange);
   font-size: 66px;
@@ -699,12 +693,8 @@ h2 span {
       grid-template-columns: 1fr 0.34fr;
       padding: 12px 2px;
 
-      & span:nth-child(2) {
-        display: none;
-      }
-
-      & span:last-child {
-        text-align: right;
+      & .final-score-label {
+        text-align: center;
       }
     }
 
@@ -716,7 +706,8 @@ h2 span {
 
     & .contestant {
       display: grid;
-      grid-template-columns: 1fr 0.34fr;
+      grid-template-columns: minmax(0, 1.3fr) 150px minmax(52px, 0.45fr);
+      align-items: center;
       min-height: 145px;
       padding: 12px 8px;
       border: 0;
@@ -727,22 +718,18 @@ h2 span {
       }
 
       & > .stack-area {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        position: absolute;
-        right: 75px;
-        bottom: 0;
-        width: 43%;
+        width: 120px;
         height: 100px;
-        margin-top: 0;
+        margin: 0;
+        transform: translateY(-1rem);
       }
     }
 
     & .plate {
-      left: 4px;
-      bottom: 0;
+      left: 50%;
+      bottom: -1rem;
       width: 140px;
-      transform: none;
+      transform: translateX(-50%);
     }
 
     & .person {
@@ -778,9 +765,8 @@ h2 span {
       font-size: 8px;
     }
 
-    & .bones {
-      height: calc(var(--score) * 0.75px);
-      max-height: 78px;
+    & .pile {
+      height: 78px;
     }
   }
 }

@@ -38,8 +38,7 @@ export function Leaderboard({ contestants }: LeaderboardProps) {
 
       <div className="table-topline">
         <span>RANK / CONTENDER</span>
-        <span>STACK HEIGHT = NUGGETS EATEN</span>
-        <span>FINAL SCORE</span>
+        <span className="final-score-label">FINAL SCORE</span>
       </div>
 
       <div className="contestants">
