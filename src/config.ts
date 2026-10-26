@@ -1,34 +1,29 @@
-import type { Contestant, NuggetPosition } from "./types";
+import type { Contestant, NuggetPosition } from "./components/types";
 
 export const contestants: Contestant[] = [
   {
-    name: "MAYA 'THE MACHINE'",
-    initials: "MM",
-    note: "THE UNSTOPPABLE",
-    score: 100,
-    place: "01",
+    name: "DAVE 'THE CHAMP'",
+    initials: "DE",
+    note: "GOT THERE FIRST. KEPT IT CLASSY",
+    score: 69,
+    timeTakenMinutes: 60,
+    timestamp: "2026-03-03T12:00:00Z",
   },
   {
-    name: "DAN 'DIP KING'",
-    initials: "DK",
-    note: "SAUCE STRATEGIST",
-    score: 87,
-    place: "02",
+    name: "VLAD 'THE DUNK LORD'",
+    initials: "VD",
+    note: "69 NUGGETS, ZERO REGRETS",
+    score: 69,
+    timeTakenMinutes: 80,
+    timestamp: "2026-10-20T12:00:00Z",
   },
   {
-    name: "PRIYA 'CRUNCH'",
-    initials: "PC",
-    note: "SILENT BUT DEADLY",
-    score: 64,
-    place: "03",
-  },
-  {
-    name: "LEO 'THE CASUALTY'",
-    initials: "LC",
-    note: "FELL AT NUGGET 23",
-    score: 23,
-    place: "04",
-    failed: true,
+    name: "HUNTER 'THE CAVALRY'",
+    initials: "HC",
+    note: "ARRIVED, ATE 30, LEFT",
+    score: 30,
+    timeTakenMinutes: 60,
+    timestamp: "2026-03-03T12:00:00Z",
   },
 ];
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Hero } from "./components/Hero";
 import { Leaderboard } from "./components/Leaderboard";
-import { contestants } from "./components/data";
 import { SiteHeader } from "./components/SiteHeader";
+import { contestants } from "./config";
 import "./styles.css";
 
 function App() {

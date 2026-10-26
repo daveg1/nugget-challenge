@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { nuggetLayout } from "./data";
+import { nuggetLayout } from "../config";
 import type { Contestant, NuggetStyle } from "./types";
 
 type NuggetPileProps = {

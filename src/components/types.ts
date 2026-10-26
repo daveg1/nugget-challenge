@@ -5,7 +5,8 @@ export type Contestant = {
   initials: string;
   note: string;
   score: number;
-  place: string;
+  timeTakenMinutes: number;
+  timestamp: string;
   failed?: boolean;
 };
 

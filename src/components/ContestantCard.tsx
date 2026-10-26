@@ -3,9 +3,21 @@ import type { Contestant } from "./types";
 
 type ContestantCardProps = {
   contestant: Contestant;
+  placement: number;
 };
 
-export function ContestantCard({ contestant }: ContestantCardProps) {
+function formatTimeTaken(minutes: number) {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (hours === 0) {
+    return `${remainingMinutes}mins`;
+  }
+
+  return `${hours}hr ${remainingMinutes}mins`;
+}
+
+export function ContestantCard({ contestant, placement }: ContestantCardProps) {
   return (
     <article
       className={`contestant${contestant.failed ? " failed" : ""}`}
@@ -13,7 +25,7 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
       aria-label={`${contestant.name}, ${contestant.score} nuggets`}
     >
       <div className="person">
-        <span className="rank">{contestant.place}</span>
+        <span className="rank">{placement}</span>
         <span className="avatar">{contestant.initials}</span>
         <div>
           <span className="name">{contestant.name}</span>
@@ -26,6 +38,9 @@ export function ContestantCard({ contestant }: ContestantCardProps) {
       <div className="score">
         {contestant.score}
         <small>NUGGETS</small>
+        <small className="time-taken">
+          {formatTimeTaken(contestant.timeTakenMinutes)}
+        </small>
       </div>
     </article>
   );

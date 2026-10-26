@@ -7,6 +7,21 @@ type LeaderboardProps = {
 };
 
 export function Leaderboard({ contestants }: LeaderboardProps) {
+  const sortedContestants = [...contestants].sort(
+    (contestantA, contestantB) => {
+      const scoreDifference = contestantB.score - contestantA.score;
+      const dateDifference = contestantA.timestamp
+        .slice(0, 10)
+        .localeCompare(contestantB.timestamp.slice(0, 10));
+
+      return (
+        scoreDifference ||
+        dateDifference ||
+        contestantA.name.localeCompare(contestantB.name)
+      );
+    },
+  );
+
   return (
     <section className="leaderboard-section">
       <div className="section-heading">
@@ -25,8 +40,12 @@ export function Leaderboard({ contestants }: LeaderboardProps) {
           <span>FINAL SCORE</span>
         </div>
         <div className="contestants">
-          {contestants.map((contestant) => (
-            <ContestantCard key={contestant.name} contestant={contestant} />
+          {sortedContestants.map((contestant, index) => (
+            <ContestantCard
+              key={contestant.name}
+              contestant={contestant}
+              placement={index + 1}
+            />
           ))}
         </div>
       </div>
