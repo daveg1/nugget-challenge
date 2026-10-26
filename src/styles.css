@@ -5,6 +5,8 @@
   --orange: #f26322;
   --orange-deep: #b93813;
   --yellow: #f6c844;
+  --silver: #c5c7cc;
+  --bronze: #cd7f32;
   --lime: #c6d652;
   --muted: #9c8e7c;
   --line: rgba(245, 238, 222, 0.18);
@@ -418,17 +420,13 @@ h2 span {
     line-height: 0.85;
   }
 
-  & .table-wrap {
-    border-top: 1px solid var(--line);
-  }
-
   & .table-topline {
     display: none;
   }
 
   & .contestants {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
   }
 
@@ -436,7 +434,7 @@ h2 span {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 335px;
+    min-height: 300px;
     padding: 19px 17px 17px;
     border: 1px solid var(--line);
     overflow: hidden;
@@ -452,12 +450,22 @@ h2 span {
     }
 
     &:nth-child(2) .avatar {
-      background: var(--lime);
+      background: var(--silver);
       transform: rotate(6deg);
     }
 
     &:nth-child(3) .avatar {
-      background: #efa77c;
+      background: var(--bronze);
+    }
+
+    &:nth-child(2) {
+      border: 1px solid rgba(197, 199, 204, 0.4);
+      background: rgba(197, 199, 204, 0.035);
+    }
+
+    &:nth-child(3) {
+      border: 1px solid rgba(205, 127, 50, 0.4);
+      background: rgba(205, 127, 50, 0.035);
     }
 
     &:nth-child(4) .avatar {
@@ -495,18 +503,26 @@ h2 span {
     font-weight: 600;
   }
 
+  & .contestant:nth-child(2) .score {
+    color: var(--silver);
+  }
+
+  & .contestant:nth-child(3) .score {
+    color: var(--bronze);
+  }
+
   & .tag {
     display: block;
     margin-top: 5px;
     color: var(--muted);
-    font: 9px var(--mono);
+    font: 11px var(--mono);
     letter-spacing: 0.04em;
   }
 
   & .stack-area {
     position: relative;
     width: 100%;
-    height: 165px;
+    height: 112px;
     display: flex;
     align-items: end;
     justify-content: center;
@@ -554,7 +570,7 @@ h2 span {
   width: 38px;
   height: 28px;
   object-fit: contain;
-  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.28));
+  filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.42));
   transform: rotate(var(--tilt));
   animation: wobble 3s ease-in-out infinite alternate;
 }
@@ -564,7 +580,7 @@ h2 span {
   }
 }
 .score {
-  margin-top: 9px;
+  margin-top: 24px;
   font: 56px/0.8 var(--display);
   color: var(--yellow);
   text-align: center;
@@ -579,7 +595,7 @@ h2 span {
 .score .time-taken {
   margin-top: 5px;
   color: var(--orange);
-  font-size: 8px;
+  font-size: 13px;
   letter-spacing: 0.04em;
 }
 .failed .bones {
@@ -667,15 +683,21 @@ h2 span {
     & .table-topline {
       display: grid;
       grid-template-columns: 1fr 0.34fr;
-      padding: 12px 8px;
+      padding: 12px 2px;
 
       & span:nth-child(2) {
         display: none;
       }
+
+      & span:last-child {
+        text-align: right;
+      }
     }
 
     & .contestants {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     & .contestant {
@@ -728,13 +750,14 @@ h2 span {
     }
 
     & .tag {
-      font-size: 8px;
+      font-size: 9px;
       max-width: 125px;
     }
 
     & .score {
       margin-top: 0;
       font-size: 42px;
+      align-self: center;
     }
 
     & .score small {

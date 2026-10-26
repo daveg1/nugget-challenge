@@ -37,9 +37,8 @@ export function ContestantCard({ contestant, placement }: ContestantCardProps) {
 
       <div className="score">
         {contestant.score}
-        <small>NUGGETS</small>
         <small className="time-taken">
-          {formatTimeTaken(contestant.timeTakenMinutes)}
+          {formatTimeTaken(contestant.timeTakenMins)}
         </small>
       </div>
     </article>

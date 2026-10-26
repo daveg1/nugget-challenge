@@ -10,12 +10,15 @@ export function Leaderboard({ contestants }: LeaderboardProps) {
   const sortedContestants = [...contestants].sort(
     (contestantA, contestantB) => {
       const scoreDifference = contestantB.score - contestantA.score;
+      const timeDifference =
+        contestantA.timeTakenMins - contestantB.timeTakenMins;
       const dateDifference = contestantA.timestamp
         .slice(0, 10)
         .localeCompare(contestantB.timestamp.slice(0, 10));
 
       return (
         scoreDifference ||
+        timeDifference ||
         dateDifference ||
         contestantA.name.localeCompare(contestantB.name)
       );
@@ -33,21 +36,20 @@ export function Leaderboard({ contestants }: LeaderboardProps) {
         </div>
       </div>
 
-      <div className="table-wrap">
-        <div className="table-topline">
-          <span>RANK / CONTENDER</span>
-          <span>STACK HEIGHT = NUGGETS EATEN</span>
-          <span>FINAL SCORE</span>
-        </div>
-        <div className="contestants">
-          {sortedContestants.map((contestant, index) => (
-            <ContestantCard
-              key={contestant.name}
-              contestant={contestant}
-              placement={index + 1}
-            />
-          ))}
-        </div>
+      <div className="table-topline">
+        <span>RANK / CONTENDER</span>
+        <span>STACK HEIGHT = NUGGETS EATEN</span>
+        <span>FINAL SCORE</span>
+      </div>
+
+      <div className="contestants">
+        {sortedContestants.map((contestant, index) => (
+          <ContestantCard
+            key={contestant.name}
+            contestant={contestant}
+            placement={index + 1}
+          />
+        ))}
       </div>
     </section>
   );
