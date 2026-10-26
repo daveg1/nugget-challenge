@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
 import { NuggetBox } from "./NuggetBox";
+
+const SCROLL_INDICATOR_THRESHOLD = 80;
 
 type HeroProps = {
   isBoxOpen: boolean;
@@ -7,6 +10,26 @@ type HeroProps = {
 };
 
 export function Hero({ isBoxOpen, boxHint, onToggleBox }: HeroProps) {
+  const [
+    hasScrolledPastIndicatorThreshold,
+    setHasScrolledPastIndicatorThreshold,
+  ] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolledPastIndicatorThreshold(
+        window.scrollY >= SCROLL_INDICATOR_THRESHOLD,
+      );
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-copy">
@@ -53,6 +76,16 @@ export function Hero({ isBoxOpen, boxHint, onToggleBox }: HeroProps) {
           REGRETS
         </div>
         <p className="box-hint">{boxHint}</p>
+      </div>
+
+      <div
+        className={`scroll-indicator${
+          hasScrolledPastIndicatorThreshold ? " is-hidden" : ""
+        }`}
+        aria-hidden="true"
+      >
+        <span>SCROLL DOWN</span>
+        <span className="scroll-indicator-arrow">↓</span>
       </div>
     </section>
   );
