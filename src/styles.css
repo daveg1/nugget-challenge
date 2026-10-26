@@ -652,7 +652,7 @@ h2 span {
   .hero {
     display: block;
     min-height: auto;
-    padding: 65px 8vw 50px;
+    padding: 45px 8vw 50px;
   }
   .hero-copy {
     position: relative;

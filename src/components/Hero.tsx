@@ -1,4 +1,3 @@
-import { Eyebrow } from "./Eyebrow";
 import { NuggetBox } from "./NuggetBox";
 
 type HeroProps = {
@@ -11,7 +10,6 @@ export function Hero({ isBoxOpen, boxHint, onToggleBox }: HeroProps) {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <Eyebrow>A VERY SERIOUS COMPETITION</Eyebrow>
         <h1>
           THE
           <br />
